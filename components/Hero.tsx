@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
                  </div>
                  <div>
                    <p className="text-white text-xs font-bold uppercase tracking-widest">Atendimento Premium</p>
-                   <p className="text-gray-500 text-[10px]">Presencial & Digital</p>
+                   <p className="text-gray-500 text-[10px]">On-line em todo Brasil</p>
                  </div>
                </div>
              </div>

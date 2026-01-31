@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <span className="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">E-mail Corporativo</span>
-                    <a href={LINKS.EMAIL} className="text-white hover:text-[#c5a059] transition-colors text-lg">contato@draexemplo.adv.br</a>
+                    <a href={LINKS.EMAIL} className="text-white hover:text-[#c5a059] transition-colors text-lg">julialavigneadv@gmail.com</a>
                   </div>
                 </div>
 
@@ -32,8 +32,8 @@ const Contact: React.FC = () => {
                     <MapPin size={20} className="text-[#c5a059]" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Localização</span>
-                    <span className="text-white text-lg leading-snug">São Paulo - SP | Atendimento Presencial & Consultoria Digital</span>
+                    <span className="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Atendimento</span>
+                    <span className="text-white text-lg leading-snug">On-line em todo Brasil | Consultoria Jurídica Digital</span>
                   </div>
                 </div>
               </div>

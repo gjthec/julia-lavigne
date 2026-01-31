@@ -6,9 +6,9 @@ export const ASSETS = {
 };
 
 export const LINKS = {
-  WHATSAPP: 'https://wa.me/5511975753036?text=Olá, gostaria de agendar uma consulta.',
+  WHATSAPP: 'https://wa.me/553597650354?text=Olá Dra. Julia, gostaria de agendar uma consulta.',
   INSTAGRAM: 'https://instagram.com/SEUUSUARIO',
-  EMAIL: 'mailto:contato@exemplo.com.br',
+  EMAIL: 'mailto:julialavigneadv@gmail.com',
 };
 
 export const PRACTICE_AREAS = [
