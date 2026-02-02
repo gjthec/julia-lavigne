@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
              <div className="overflow-hidden rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
                <img
                 src={ASSETS.PERSON}
-                alt="Dra. Jurídica"
+                alt="Dra. Julia Lavigne"
                 className="w-full h-auto grayscale transition-all duration-1000 hover:grayscale-0 scale-100 hover:scale-105"
               />
              </div>
