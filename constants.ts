@@ -7,7 +7,7 @@ export const ASSETS = {
 
 export const LINKS = {
   WHATSAPP: 'https://wa.me/553597650354?text=Olá Dra. Julia, gostaria de agendar uma consulta.',
-  INSTAGRAM: 'https://instagram.com/SEUUSUARIO',
+  INSTAGRAM: 'https://instagram.com/julialavigne_adv',
   EMAIL: 'mailto:julialavigneadv@gmail.com',
 };
 
