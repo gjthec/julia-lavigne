@@ -2,8 +2,8 @@
 export const ASSETS = {
   // Agora apontando diretamente para os arquivos que você colocará na pasta do projeto
   LOGO: './logo.png',
-  PERSON: './person.jpg',
-  WALLET: './carteira.jpg',
+  PERSON: './person.jpeg',
+  WALLET: './carteira.jpeg',
 };
 
 export const LINKS = {
