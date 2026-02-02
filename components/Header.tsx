@@ -22,13 +22,21 @@ const Header: React.FC = () => {
     { label: 'Contato', href: '#contato' },
   ];
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    if (target.src !== ASSETS.LOGO_LOCAL) {
+      target.src = ASSETS.LOGO_LOCAL;
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled ? 'bg-[#0a0c10]/95 backdrop-blur-xl shadow-2xl py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo - Posição centralizada no visual ou à esquerda para confiança */}
+        {/* Logo */}
         <a href="#inicio" className="flex items-center group relative">
           <img 
             src={ASSETS.LOGO} 
+            onError={handleImageError}
             alt="Logo" 
             className={`h-10 md:h-14 w-auto object-contain transition-all duration-500 ${isScrolled ? 'brightness-110' : 'brightness-125 hover:scale-105'}`} 
           />
@@ -66,7 +74,12 @@ const Header: React.FC = () => {
       <div className={`lg:hidden fixed inset-0 bg-[#0a0c10] z-40 transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
         <div className="flex flex-col h-full justify-center px-10 space-y-10">
           <div className="mb-8">
-             <img src={ASSETS.LOGO} alt="Logo" className="h-12 w-auto brightness-125" />
+             <img 
+               src={ASSETS.LOGO} 
+               onError={handleImageError}
+               alt="Logo" 
+               className="h-12 w-auto brightness-125" 
+             />
           </div>
           {menuItems.map((item) => (
             <a

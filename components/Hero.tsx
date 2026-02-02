@@ -4,6 +4,13 @@ import { ASSETS, LINKS } from '../constants';
 import { Instagram, CheckCircle2, ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    if (target.src !== ASSETS.PERSON_LOCAL) {
+      target.src = ASSETS.PERSON_LOCAL;
+    }
+  };
+
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-32 pb-16 lg:pt-40 overflow-hidden bg-[#0a0c10]">
       {/* Luz ambiente de fundo para profundidade */}
@@ -11,7 +18,7 @@ const Hero: React.FC = () => {
       
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         
-        {/* Lado do Conteúdo (Texto) - Agora é o PRIMEIRO no mobile (order-1) */}
+        {/* Lado do Conteúdo (Texto) */}
         <div className="order-1 flex flex-col items-start reveal">
           <div className="inline-flex items-center py-2 px-4 mb-8 bg-[#c5a059]/10 border border-[#c5a059]/20 text-[#c5a059] text-[10px] font-bold uppercase tracking-[0.3em] rounded-sm">
             <span className="relative flex h-2 w-2 mr-3">
@@ -67,19 +74,18 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Lado da Imagem - Agora é o SEGUNDO no mobile (order-2) */}
+        {/* Lado da Imagem */}
         <div className="order-2 flex justify-center lg:justify-end relative reveal">
           <div className="relative z-10 w-full max-w-[320px] md:max-w-md">
-             {/* Moldura elegante */}
              <div className="absolute inset-0 border border-[#c5a059]/30 translate-x-6 translate-y-6 -z-10 rounded-sm"></div>
              <div className="overflow-hidden rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
                <img
                 src={ASSETS.PERSON}
+                onError={handleImageError}
                 alt="Dra. Julia Lavigne"
                 className="w-full h-auto grayscale transition-all duration-1000 hover:grayscale-0 scale-100 hover:scale-105"
               />
              </div>
-             {/* Selo de Confiança flutuante */}
              <div className="absolute -bottom-10 -left-10 bg-[#14171c] border border-white/5 p-6 rounded-sm shadow-2xl hidden md:block">
                <div className="flex items-center gap-4">
                  <div className="w-10 h-10 bg-[#c5a059]/20 flex items-center justify-center rounded-full">
