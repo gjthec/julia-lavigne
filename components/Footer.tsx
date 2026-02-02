@@ -4,13 +4,6 @@ import { ASSETS, LINKS } from '../constants';
 import { Instagram, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.target as HTMLImageElement;
-    if (target.src !== ASSETS.LOGO_LOCAL) {
-      target.src = ASSETS.LOGO_LOCAL;
-    }
-  };
-
   return (
     <footer className="bg-[#0a0c10] py-24 border-t border-white/5">
       <div className="container mx-auto px-6">
@@ -18,7 +11,6 @@ const Footer: React.FC = () => {
           <div className="max-w-sm">
             <img 
               src={ASSETS.LOGO} 
-              onError={handleImageError}
               alt="Logo" 
               className="h-14 w-auto mb-8 object-contain brightness-125" 
             />

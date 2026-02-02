@@ -3,13 +3,6 @@ import React from 'react';
 import { ASSETS, LINKS } from '../constants';
 
 const About: React.FC = () => {
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.target as HTMLImageElement;
-    if (target.src !== ASSETS.WALLET_LOCAL) {
-      target.src = ASSETS.WALLET_LOCAL;
-    }
-  };
-
   return (
     <section id="sobre" className="py-24 bg-[#14171c]">
       <div className="container mx-auto px-6">
@@ -19,7 +12,6 @@ const About: React.FC = () => {
               <div className="overflow-hidden rounded-sm shadow-2xl relative z-10">
                 <img
                   src={ASSETS.WALLET}
-                  onError={handleImageError}
                   alt="Excelência Jurídica"
                   className="w-full h-auto object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-1000"
                 />

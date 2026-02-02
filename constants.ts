@@ -1,12 +1,9 @@
 
 export const ASSETS = {
-  LOGO: 'https://i.ibb.co/Q7pQX2d7/Logotipo-Sem-Fundo.png',
-  PERSON: 'https://i.ibb.co/JFvZmxcC/person.jpg',
-  WALLET: 'https://i.ibb.co/fYBng6FW/carteira.jpg',
-  // Fallbacks locais (pasta raiz/public)
-  LOGO_LOCAL: 'logo.png',
-  PERSON_LOCAL: 'person.jpeg',
-  WALLET_LOCAL: 'carteira.jpeg',
+  // Agora apontando diretamente para os arquivos que você colocará na pasta do projeto
+  LOGO: './logo.png',
+  PERSON: './person.jpg',
+  WALLET: './carteira.jpg',
 };
 
 export const LINKS = {
