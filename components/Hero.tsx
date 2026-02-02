@@ -1,102 +1,100 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ASSETS, LINKS } from '../constants';
-import { Menu, X } from 'lucide-react';
+import { Instagram, CheckCircle2, ArrowRight } from 'lucide-react';
 
-const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const menuItems = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Atuação', href: '#atuacao' },
-    { label: 'Contato', href: '#contato' },
-  ];
-
+const Hero: React.FC = () => {
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${isScrolled ? 'bg-[#0a0c10]/95 backdrop-blur-xl shadow-2xl py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#inicio" className="flex items-center group relative">
-          <img 
-            src={ASSETS.LOGO} 
-            alt="Logo" 
-            className={`h-10 md:h-14 w-auto object-contain transition-all duration-500 ${isScrolled ? 'brightness-110' : 'brightness-125 hover:scale-105'}`} 
-          />
-        </a>
-
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center space-x-12">
-          {menuItems.map((item) => (
-            <a 
-              key={item.label} 
-              href={item.href} 
-              className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-[#c5a059] transition-colors relative group"
-            >
-              {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#c5a059] transition-all group-hover:w-full"></span>
-            </a>
-          ))}
-          <a
-            href={LINKS.WHATSAPP}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#c5a059] text-[#0a0c10] px-7 py-3 rounded-sm text-[10px] font-bold uppercase tracking-widest hover:bg-white transition-all shadow-[0_5px_15px_rgba(197,160,89,0.2)]"
-          >
-            Falar no WhatsApp
-          </a>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button className="lg:hidden text-white p-2 hover:bg-white/5 rounded-full transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div className={`lg:hidden fixed inset-0 bg-[#0a0c10] z-40 transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
-        <div className="flex flex-col h-full justify-center px-10 space-y-10">
-          <div className="mb-8">
-             <img 
-               src={ASSETS.LOGO} 
-               alt="Logo" 
-               className="h-12 w-auto brightness-125" 
-             />
+    <section id="inicio" className="relative min-h-screen flex items-center pt-32 pb-16 lg:pt-40 overflow-hidden bg-[#0a0c10]">
+      {/* Luz ambiente de fundo para profundidade */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,#c5a05910,transparent_50%)] pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        {/* Lado do Conteúdo (Texto) */}
+        <div className="order-1 flex flex-col items-start reveal">
+          <div className="inline-flex items-center py-2 px-4 mb-8 bg-[#c5a059]/10 border border-[#c5a059]/20 text-[#c5a059] text-[10px] font-bold uppercase tracking-[0.3em] rounded-sm">
+            <span className="relative flex h-2 w-2 mr-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c5a059] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c5a059]"></span>
+            </span>
+            Advocacia de Alta Performance
           </div>
-          {menuItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-4xl font-serif text-white hover:text-[#c5a059] transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
-          <div className="pt-10">
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-8">
+            Defesa <span className="text-[#c5a059] italic">estratégica</span> <br className="hidden md:block" /> 
+            e resultados reais.
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-xl leading-relaxed">
+            Unimos o rigor técnico da lei com um atendimento personalizado. Soluções jurídicas modernas para quem não abre mão da excelência.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
             <a
               href={LINKS.WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full bg-[#c5a059] text-[#0a0c10] py-6 rounded-sm text-center text-sm font-bold uppercase tracking-widest"
-              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-center bg-[#c5a059] text-[#0a0c10] px-10 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-white transition-all shadow-[0_15px_30px_rgba(197,160,89,0.15)] group"
             >
-              Falar no WhatsApp
+              Agendar Consultoria
+              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href={LINKS.INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-white/10 text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest text-xs hover:bg-white/5 transition-all"
+            >
+              <Instagram size={16} className="mr-2" />
+              Instagram
             </a>
           </div>
+
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-6 pt-10 border-t border-white/5 w-full">
+            <div className="flex flex-col gap-2">
+              <span className="text-[#c5a059] font-bold text-xl font-serif">100%</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Comprometimento</span>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-[#c5a059] font-bold text-xl font-serif">Agilidade</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Nos Processos</span>
+            </div>
+            <div className="flex flex-col gap-2 hidden md:flex">
+              <span className="text-[#c5a059] font-bold text-xl font-serif">Transparência</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Com o Cliente</span>
+            </div>
+          </div>
         </div>
+
+        {/* Lado da Imagem */}
+        <div className="order-2 flex justify-center lg:justify-end relative reveal">
+          <div className="relative z-10 w-full max-w-[320px] md:max-w-md">
+             <div className="absolute inset-0 border border-[#c5a059]/30 translate-x-6 translate-y-6 -z-10 rounded-sm"></div>
+             <div className="overflow-hidden rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
+               <img
+                src={ASSETS.PERSON}
+                alt="Dra. Julia Lavigne"
+                className="w-full h-auto grayscale transition-all duration-1000 hover:grayscale-0 scale-100 hover:scale-105"
+              />
+             </div>
+             <div className="absolute -bottom-10 -left-10 bg-[#14171c] border border-white/5 p-6 rounded-sm shadow-2xl hidden md:block">
+               <div className="flex items-center gap-4">
+                 <div className="w-10 h-10 bg-[#c5a059]/20 flex items-center justify-center rounded-full">
+                   <CheckCircle2 className="text-[#c5a059]" size={20} />
+                 </div>
+                 <div>
+                   <p className="text-white text-xs font-bold uppercase tracking-widest">Atendimento Premium</p>
+                   <p className="text-gray-500 text-[10px]">On-line em todo Brasil</p>
+                 </div>
+               </div>
+             </div>
+          </div>
+        </div>
+
       </div>
-    </header>
+    </section>
   );
 };
 
-export default Header;
+export default Hero;
